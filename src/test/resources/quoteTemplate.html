@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quote Details</h1>
+    <p><strong>Quote ID:</strong> <span th:text="${id}"></span></p>
+    <p><strong>State:</strong> <span th:text="${state}"></span></p>
+    <p><strong>Validity Date:</strong> <span th:text="${validityDate}"></span></p>
+    <h2>Line Items</h2>
+    <ul>
+        <li th:each="item : ${lineItems}" th:text="${item}"></li>
+    </ul>
+</body>
+</html>
